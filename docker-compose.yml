@@ -46,6 +46,6 @@ dynamodb:
   restart: always
   image: instructure/dynamodb
   ports:
-    - "8080:8080"
+    - "8080:8000"
   volumes:
     - /var/lib/dynamodb
