@@ -2,9 +2,9 @@
 
 Featuring:
 
-- Docker v1.10.3
-- Docker Compose v1.6.2
-- Docker Machine v0.6.0
+- Docker v1.12.0-rc2
+- Docker Compose v1.8.0-rc1
+- Docker Machine v0.8.0-rc1
 - Python 3.5
 
 Blog post -> https://realpython.com/blog/python/django-development-with-docker-compose-and-machine/
