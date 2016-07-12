@@ -6,13 +6,16 @@ web:
   links:
     - postgres:postgres
     - redis:redis
+    - dynamodb:dynamodb
   volumes:
     - /usr/src/app
     - /usr/src/app/static
+    - /var/log/django
+    - .:/web
   env_file: .env
   environment:
     DEBUG: 'true'
-  command: /usr/local/bin/gunicorn docker_django.wsgi:application -w 2 -b :8000
+  command: /usr/local/bin/gunicorn docker_django.wsgi:application -w 2 -b :8000 --reload
 
 nginx:
   restart: always
@@ -21,6 +24,7 @@ nginx:
     - "80:80"
   volumes:
     - /www/static
+    - /var/log/nginx
   volumes_from:
     - web
   links:

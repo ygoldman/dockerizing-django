@@ -3,4 +3,7 @@
 .idea
 venv
 env
+.env
 __pycache__
+.python-version
+production.env

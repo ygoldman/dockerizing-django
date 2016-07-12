@@ -6,7 +6,8 @@ web:
   links:
     - postgres:postgres
     - redis:redis
-  env_file: .env
+    - dynamodb:dynamodb
+  env_file: production.env
   command: /usr/local/bin/gunicorn docker_django.wsgi:application -w 2 -b :8000
 
 nginx:
