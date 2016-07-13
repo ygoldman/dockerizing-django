@@ -10,12 +10,13 @@ web:
   volumes:
     - /usr/src/app
     - /usr/src/app/static
+    - /usr/src/app/media
     - /var/log/django
     - .:/web
   env_file: .env
   environment:
     DEBUG: 'true'
-  command: /usr/local/bin/gunicorn docker_django.wsgi:application -w 2 -b :8000 --reload
+  command: uwsgi --ini /usr/src/app/uwsgi.ini
 
 nginx:
   restart: always
