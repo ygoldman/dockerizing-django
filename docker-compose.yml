@@ -12,6 +12,7 @@ web:
     - /usr/src/app/static
     - /usr/src/app/media
     - /var/log/django
+    - /etc/ssl/certs
     - .:/web
   env_file: .env
   environment:
@@ -23,6 +24,7 @@ nginx:
   build: ./nginx/
   ports:
     - "80:80"
+    - "443:443"
   volumes:
     - /www/static
     - /var/log/nginx

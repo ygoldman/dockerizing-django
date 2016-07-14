@@ -15,6 +15,7 @@ class Internationalization(object):
 
 
 class Base(Internationalization, Configuration):
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     DEBUG = values.BooleanValue(default=False)
     SECRET_KEY = values.Value(environ_required=True)
     ROOT_URLCONF = values.Value(default='docker_django.urls')
